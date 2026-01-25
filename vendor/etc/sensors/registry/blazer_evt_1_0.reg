@@ -1,0 +1,71 @@
+#
+# Blazer sensor device configuration registry script for the EVT 1.0 stage.
+#
+# Source of truth: go/pixel-sensor-list
+#
+
+#
+# CDT Filter <CDT>:<mask>
+# CDT format: <0xPPPPSJIV> (P:Product, S:Stage, J:Major, I:Minor, V:Variant)
+# go/pixel-cdt-lga
+#
+
+?+0x43100:0xFFFFFFF0  # EVT 1.0
+
+#
+# Record reg_script.
+#
+
++/
+reg_script=blazer_evt_1_0.reg
+
+#
+# Sensors
+#
+
+# MAG 0 (MMC5616WA)
++/dev/mmc5616/0
+  priority=0
++/dev/mmc5616/0/mag
+  name=MMC5616 Magnetometer 0
+
+# MAG 1 (MMC5616WA)
++/dev/mmc5616/1
+  bus_name=i3c4
+  bus_freq_hz=400000
+  i3c_freq_hz=6250000
+  bus_addr=0x30
+  i3c_addr=0x14
+  priority=1
++/dev/mmc5616/1/mag
+  orientation_transform=-1 -2 3
+  name=MMC5616 Magnetometer 1
+  fac_cal_transform=1.0097 0.0988 0.1017 0.0850 0.8187 0.1635 0.0782 0.0523 1.1959 0 0 0
+  curr_comp_factors_fast=11 4.5 0.8
+  curr_comp_factors=22.3 9.7 2.5
+
+# ALSP (TMD3743)
++/dev/tmd3743/0/als
+  x_scale=1.10666
+  lux_scale=1.0202
+  z_scale=1.1077
+  x_crgbw_coefs=-37.408235 43.854591 129.513772 -9.300066 -2.601188
+  lux_crgbw_coefs=-27.257599 26.672212 124.899590 0.132850 -1.952329
+  z_crgbw_coefs=30.456540 -57.486146 -0.813766 132.762996 1.365894
+
++/dev/tmd3743/0/prox
+  pulse_count=2
+  pulse_len_us=63
+
+# RAINBOW (VD6282)
++/dev/vd6282/0/spectral
+  # Golden values for calibration.
+  golden_rals_r=990.849609375
+  golden_rals_g=1123.46484375
+  golden_rals_b=282.928515625
+  golden_rals_clr1=4913.31015625
+  golden_rals_ir=2971.34726563
+  golden_rals_clr2=4913.23671875
+
++/dev/vd6282/0/rls
+  lux_scale=109.740506
