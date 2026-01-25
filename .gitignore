@@ -1,0 +1,12 @@
+vendor/apex/com.google.pixel.camera.hal.apex
+product/priv-app/Velvet/Velvet.apk
+product/priv-app/GoogleCamera/GoogleCamera.apk
+product/priv-app/PrebuiltBugle/PrebuiltBugle.apk
+product/priv-app/PrebuiltGmsCoreVic/PrebuiltGmsCoreVic.apk
+product/priv-app/DevicePersonalizationPrebuiltPixel2025-playstore_aiai_20250306.00_RC04/DevicePersonalizationPrebuiltPixel2025-playstore_aiai_20250306.00_RC04.apk
+product/app/Maps/Maps.apk
+product/app/PrebuiltGmail/PrebuiltGmail.apk
+product/app/YouTube/YouTube.apk
+product/app/Photos/Photos.apk
+fs_config_dirs
+fs_config_files

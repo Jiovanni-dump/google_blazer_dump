@@ -1,0 +1,14 @@
+# blazer-user 16 BD1A.250702.001 13724644 release-keys
+- manufacturer: google
+- platform: laguna
+- codename: blazer
+- flavor: blazer-user
+- release: 16
+- id: BD1A.250702.001
+- incremental: 13724644
+- tags: release-keys
+- fingerprint: google/blazer/blazer:16/BD1A.250702.001/13724644:user/release-keys
+- is_ab: true
+- brand: google
+- branch: blazer-user-16-BD1A.250702.001-13724644-release-keys
+- repo: google_blazer_dump
